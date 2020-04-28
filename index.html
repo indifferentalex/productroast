@@ -5,14 +5,257 @@
 
   <title>PRODUCT ROAST™️</title>
   <meta name="description" content="A party game for 21st century entrepreneurs">
+  <meta property="og:image" content="assets/images/landing_page_screenshot.png" />
+
+  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 </head>
 
 <body>
-  <h1>PRODUCT ROAST™️</h1>
-  <h3>A game for minimalists.</h3>
+  <style>
+    body {
+      font-size: 16px;
+      margin: 0px;
+      font-family: Arial, sans-serif;
+    }
 
-  <p>Next roast will be on the <strong>30th of April</strong> at <strong>5 PM CET</strong></p>
+    #splash-screen {
+      position: absolute;
+      height: 100vh;
+      width: 100vw;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 72px;
+    }
 
-  <p>All roasters welcome. If you feel like getting roasted, get in touch with alex for a slot</p>
+    #splash-screen.closed {
+      display: none;
+    }
+
+    #splash-screen img.matches {
+      cursor: pointer;
+      height: 30vh;
+    }
+
+    #landing-page {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #landing-page.closed {
+      overflow: hidden;
+      height: 100vh;
+    }
+
+    .logo {
+      width: 60vw;
+    }
+
+    .hero-banner {
+      background: #732dde;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 120px;
+    }
+
+    /* We use this to align the logo on the landing page where there are no matches
+       that way we can continue relying on flex box to take care of spacing for us */
+    .hero-banner .matches-filler {
+      height: 30vh;
+    }
+
+    .hero-banner .hero-banner-cards {
+      margin-top: -80px;
+      width: 50vw;
+    }
+
+    @media only screen and (max-width: 768px) {
+      .hero-banner .hero-banner-cards {
+        margin-top: 0px;
+        width: 95vw;
+      }
+    }
+
+    .content-row {
+      padding: 36px 0px;
+      width: 80%;
+      text-align: center;
+    }
+
+    .content-row h2 {
+      margin-top: 250px;
+      font-weight: bold;
+      font-size: 1.35rem;
+      letter-spacing: -1px;
+      margin-bottom: 1rem;
+    }
+
+    .content-row p {
+      font-size: 1rem;
+      letter-spacing: -1px;
+    }
+
+    #boom-roasted {
+      position: relative;
+    }
+
+    .boom-roasted-text-wrapper {
+      position: absolute;
+      left: 50px;
+      top: 50%;
+    }
+
+    .boom-roasted-text {
+      font-size: 100px;
+      display: none;
+      color: #fff;
+    }
+
+    .boom-roasted-text.visible {
+      display: inline-block
+    }
+
+    img.boom-roasted {
+      display: none;
+      padding-top: 300px;
+      width: 100vw;
+    }
+
+    img.boom-roasted.current-frame {
+      display: block;
+    }
+  </style>
+
+  <div id="splash-screen">
+    <div></div>
+    <img class="logo" src="assets/images/logo_dark.svg" />
+    <img class="matches" src="assets/images/matches_2.png" />
+  </div>
+
+  <div id="landing-page" class="closed">
+    <div class="hero-banner">
+      <div></div>
+      <img class="logo" src="assets/images/logo_light.svg" />
+      <div class="matches-filler">
+        <img class="hero-banner-cards" src="assets/images/hero_banner_cards.png" />
+      </div>
+    </div>
+
+    <div class="content-row">
+      <h2>Next roast will be on the 30th of April at 5 PM CET 🔥</h2>
+
+      <p>All roasters welcome, a hangouts link will be posted here before the event starts. If you feel like getting roasted, get in touch with alex for a slot.</p>
+    </div>
+
+    <div id="boom-roasted">
+      <div class="boom-roasted-text-wrapper">
+        <div class="boom-roasted-text" id="boom">Boom!</div>
+        <div class="boom-roasted-text" id="roasted">Roasted!</div>
+      </div>
+
+      <img class="boom-roasted current-frame" id="boom-roasted-1" src="assets/images/boom_roasted/1.jpg" />
+      <img class="boom-roasted" id="boom-roasted-2" src="assets/images/boom_roasted/2.jpg" />
+      <img class="boom-roasted" id="boom-roasted-3" src="assets/images/boom_roasted/3.jpg" />
+      <img class="boom-roasted" id="boom-roasted-4" src="assets/images/boom_roasted/4.jpg" />
+      <img class="boom-roasted" id="boom-roasted-5" src="assets/images/boom_roasted/5.jpg" />
+      <img class="boom-roasted" id="boom-roasted-6" src="assets/images/boom_roasted/6.jpg" />
+      <img class="boom-roasted" id="boom-roasted-7" src="assets/images/boom_roasted/7.jpg" />
+      <img class="boom-roasted" id="boom-roasted-8" src="assets/images/boom_roasted/8.jpg" />
+      <img class="boom-roasted" id="boom-roasted-9" src="assets/images/boom_roasted/9.jpg" />
+      <img class="boom-roasted" id="boom-roasted-10" src="assets/images/boom_roasted/10.jpg" />
+      <img class="boom-roasted" id="boom-roasted-11" src="assets/images/boom_roasted/11.jpg" />
+      <img class="boom-roasted" id="boom-roasted-12" src="assets/images/boom_roasted/12.jpg" />
+      <img class="boom-roasted" id="boom-roasted-13" src="assets/images/boom_roasted/13.jpg" />
+      <img class="boom-roasted" id="boom-roasted-14" src="assets/images/boom_roasted/14.jpg" />
+      <img class="boom-roasted" id="boom-roasted-15" src="assets/images/boom_roasted/15.jpg" />
+      <img class="boom-roasted" id="boom-roasted-16" src="assets/images/boom_roasted/16.jpg" />
+      <img class="boom-roasted" id="boom-roasted-17" src="assets/images/boom_roasted/17.jpg" />
+      <img class="boom-roasted" id="boom-roasted-18" src="assets/images/boom_roasted/18.jpg" />
+      <img class="boom-roasted" id="boom-roasted-19" src="assets/images/boom_roasted/19.jpg" />
+      <img class="boom-roasted" id="boom-roasted-20" src="assets/images/boom_roasted/20.jpg" />
+      <img class="boom-roasted" id="boom-roasted-21" src="assets/images/boom_roasted/21.jpg" />
+      <img class="boom-roasted" id="boom-roasted-22" src="assets/images/boom_roasted/22.jpg" />
+      <img class="boom-roasted" id="boom-roasted-23" src="assets/images/boom_roasted/23.jpg" />
+      <img class="boom-roasted" id="boom-roasted-24" src="assets/images/boom_roasted/24.jpg" />
+      <img class="boom-roasted" id="boom-roasted-25" src="assets/images/boom_roasted/25.jpg" />
+      <img class="boom-roasted" id="boom-roasted-26" src="assets/images/boom_roasted/26.jpg" />
+      <img class="boom-roasted" id="boom-roasted-27" src="assets/images/boom_roasted/27.jpg" />
+      <img class="boom-roasted" id="boom-roasted-28" src="assets/images/boom_roasted/28.jpg" />
+      <img class="boom-roasted" id="boom-roasted-29" src="assets/images/boom_roasted/29.jpg" />
+      <img class="boom-roasted" id="boom-roasted-30" src="assets/images/boom_roasted/30.jpg" />
+      <img class="boom-roasted" id="boom-roasted-31" src="assets/images/boom_roasted/31.jpg" />
+      <img class="boom-roasted" id="boom-roasted-32" src="assets/images/boom_roasted/32.jpg" />
+      <img class="boom-roasted" id="boom-roasted-33" src="assets/images/boom_roasted/33.jpg" />
+      <img class="boom-roasted" id="boom-roasted-34" src="assets/images/boom_roasted/34.jpg" />
+      <img class="boom-roasted" id="boom-roasted-35" src="assets/images/boom_roasted/35.jpg" />
+      <img class="boom-roasted" id="boom-roasted-36" src="assets/images/boom_roasted/36.jpg" />
+      <img class="boom-roasted" id="boom-roasted-37" src="assets/images/boom_roasted/37.jpg" />
+      <img class="boom-roasted" id="boom-roasted-38" src="assets/images/boom_roasted/38.jpg" />
+      <img class="boom-roasted" id="boom-roasted-39" src="assets/images/boom_roasted/39.jpg" />
+      <img class="boom-roasted" id="boom-roasted-40" src="assets/images/boom_roasted/40.jpg" />
+      <img class="boom-roasted" id="boom-roasted-41" src="assets/images/boom_roasted/41.jpg" />
+    </div>
+  </div>
+
+  <script>
+    const boomRoasted = new Audio('assets/audio/boom_roasted.ogg');
+    const matchLighting = new Audio('assets/audio/match_lighting.ogg');
+
+    document.querySelector("#splash-screen .matches").addEventListener("click", function() {
+      matchLighting.play();
+
+      setTimeout(function() {
+        document.getElementById("splash-screen").classList.add("closed");
+        document.getElementById("landing-page").classList.remove("closed");
+      }, 500);
+    });
+
+    // Allows us to hit the final frame of the "Boom! Roasted!" animation and play the audio
+    // file a bit before the bottom of the page is reached.
+    const buffer = 0;
+    let played = false;
+
+    window.onscroll = function(e) {
+      const frameHeight = document.querySelector(".boom-roasted.current-frame").offsetHeight;
+
+      const currentScroll = window.innerHeight + window.scrollY;
+      const startOfAnimation = document.body.offsetHeight - buffer - (frameHeight / 2);
+      // The current amount of pixels into the animation window, divided by the total height
+      // of the animation window, times how many frames there are in total.
+      const frameCalculation = Math.round((currentScroll - startOfAnimation) / (frameHeight / 2) * 41);
+      const currentFrame = frameCalculation >= 1 && frameCalculation <= 41 ? frameCalculation : 1;
+
+      // console.log(currentFrame);
+
+      if (currentFrame >= 9) {
+        if (!played) {
+          boomRoasted.currentTime = 0;
+          boomRoasted.play();
+          played = true;
+        }
+
+        document.getElementById("boom").classList.add("visible");
+      } else {
+        played = false;
+        document.getElementById("boom").classList.remove("visible");
+      }
+
+      if (currentFrame >= 16) {
+        document.getElementById("roasted").classList.add("visible");
+      } else {
+        document.getElementById("roasted").classList.remove("visible");
+      }
+
+      document.querySelectorAll(".boom-roasted").forEach(img => img.classList.remove("current-frame"));
+      document.getElementById(`boom-roasted-${currentFrame}`).classList.add("current-frame");
+    };
+  </script>
 </body>
 </html>
