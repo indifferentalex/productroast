@@ -4,6 +4,7 @@
   <meta charset="utf-8">
 
   <title>PRODUCT ROAST™️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="A party game for 21st century entrepreneurs">
   <meta property="og:image" content="assets/images/landing_page_screenshot.png" />
 
@@ -47,6 +48,7 @@
 
     #landing-page.closed {
       overflow: hidden;
+      display: none;
       height: 100vh;
     }
 
@@ -65,8 +67,10 @@
       margin-bottom: 120px;
     }
 
-    /* We use this to align the logo on the landing page where there are no matches
-       that way we can continue relying on flex box to take care of spacing for us */
+    /*
+      We use this to align the logo on the landing page where there are no matches
+      that way we can continue relying on flex box to take care of spacing for us
+    */
     .hero-banner .matches-filler {
       height: 30vh;
     }
@@ -76,9 +80,9 @@
       width: 50vw;
     }
 
-    @media only screen and (max-width: 768px) {
+    @media (max-width: 768px) {
       .hero-banner .hero-banner-cards {
-        margin-top: 0px;
+        margin-top: 30px;
         width: 95vw;
       }
     }
@@ -103,6 +107,7 @@
     }
 
     #boom-roasted {
+      margin-top: 300px;
       position: relative;
     }
 
@@ -118,13 +123,18 @@
       color: #fff;
     }
 
+    @media (max-width: 768px) {
+      .boom-roasted-text {
+        font-size: 36px;
+      }
+    }
+
     .boom-roasted-text.visible {
       display: inline-block
     }
 
     img.boom-roasted {
       display: none;
-      padding-top: 300px;
       width: 100vw;
     }
 
@@ -135,14 +145,14 @@
 
   <div id="splash-screen">
     <div></div>
-    <img class="logo" src="assets/images/logo_dark.svg" />
+    <img class="logo" src="assets/images/logo_dark_2.svg" />
     <img class="matches" src="assets/images/matches_2.png" />
   </div>
 
   <div id="landing-page" class="closed">
     <div class="hero-banner">
       <div></div>
-      <img class="logo" src="assets/images/logo_light.svg" />
+      <img class="logo" src="assets/images/logo_light_2.svg" />
       <div class="matches-filler">
         <img class="hero-banner-cards" src="assets/images/hero_banner_cards.png" />
       </div>
@@ -230,7 +240,7 @@
       // The current amount of pixels into the animation window, divided by the total height
       // of the animation window, times how many frames there are in total.
       const frameCalculation = Math.round((currentScroll - startOfAnimation) / (frameHeight / 2) * 41);
-      const currentFrame = frameCalculation >= 1 && frameCalculation <= 41 ? frameCalculation : 1;
+      const currentFrame = frameCalculation >= 1 ? (frameCalculation <= 41 ? frameCalculation : 41) : 1;
 
       // console.log(currentFrame);
 
