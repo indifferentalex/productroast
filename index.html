@@ -215,10 +215,15 @@
   </div>
 
   <script>
-    const boomRoasted = new Audio('assets/audio/boom_roasted.ogg');
-    const matchLighting = new Audio('assets/audio/match_lighting.ogg');
+    const boomRoasted = new Audio('assets/audio/boom_roasted.mp3');
+    const matchLighting = new Audio('assets/audio/match_lighting.mp3');
 
     document.querySelector("#splash-screen .matches").addEventListener("click", function() {
+      // Need to "initialize" sound in the event listener on iOS
+      boomRoasted.play();
+      boomRoasted.pause();
+      boomRoasted.currentTime = 0;
+
       matchLighting.play();
 
       setTimeout(function() {
