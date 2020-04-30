@@ -17,6 +17,7 @@
       font-size: 16px;
       margin: 0px;
       font-family: Arial, sans-serif;
+      color: #474747;
     }
 
     #splash-screen {
@@ -57,7 +58,8 @@
     }
 
     .hero-banner {
-      background: #732dde;
+      /* background: #732dde; */
+      background: #ff9c22;
       width: 100vw;
       height: 100vh;
       display: flex;
@@ -90,11 +92,9 @@
     .content-row {
       padding: 36px 0px;
       width: 80%;
-      text-align: center;
     }
 
     .content-row h2 {
-      margin-top: 250px;
       font-weight: bold;
       font-size: 1.35rem;
       letter-spacing: -1px;
@@ -103,18 +103,55 @@
 
     .content-row p {
       font-size: 1rem;
-      letter-spacing: -1px;
+      letter-spacing: -0.5px;
+      margin-bottom: 1rem;
+      line-height: 1.5rem;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding-top: 72px;
+    }
+
+    .cards .card {
+      width: 21%;
+      margin-bottom: 36px;
+    }
+
+    .cards .card img {
+      width: 100%;
+      filter: drop-shadow(0px 5px 10px rgba(185, 144, 253, 0.2));
+    }
+
+    .cards .card .description {
+      margin-top: 36px;
+      text-align: center;
+      line-height: 1.2rem;
     }
 
     #boom-roasted {
-      margin-top: 300px;
       position: relative;
+    }
+
+    .credits-wrapper {
+      position: absolute;
+      text-align: right;
+      line-height: 1.5rem;
+      right: 50px;
+      bottom: 50px;
+      color: #fff;
+    }
+
+    .credits-wrapper a {
+      color: #fff;
     }
 
     .boom-roasted-text-wrapper {
       position: absolute;
       left: 50px;
-      top: 50%;
+      top: 50px;
     }
 
     .boom-roasted-text {
@@ -141,6 +178,19 @@
     img.boom-roasted.current-frame {
       display: block;
     }
+
+    ul .question {
+      font-weight: bold;
+    }
+
+    ul li {
+      margin-bottom: 1rem;
+    }
+
+    ul li span {
+      letter-spacing: -0.5px;
+      line-height: 1.5rem;
+    }
   </style>
 
   <div id="splash-screen">
@@ -159,9 +209,89 @@
     </div>
 
     <div class="content-row">
-      <h2>Next roast will be on the 30th of April at 5 PM CET 🔥</h2>
+      <h2>What is Product Roast™️?</h2>
+      <p>Product Roast is all about getting a bunch of your friends together, pitching them your best startup/product/app/website idea, and letting them roast it.</p>
+      <p>Can your amazing new idea stand up to the critique of a leading panel of wannabe VCs? Do you think building it can disrupt the status quo and make the world a better place?</p>
+      <p>Show them just how high you can fly.</p>
+    </div>
 
-      <p>All roasters welcome, a hangouts link will be posted here before the event starts. If you feel like getting roasted, get in touch with alex for a slot.</p>
+    <div class="content-row">
+      <h2>How to play</h2>
+      <p></p>
+      <p>Get 1+ of your friends and pitch them any idea you’ve had for an app/product/service and let them roast it! The more likely it is to make the world a better place the better!</p>
+      <p>Once you’ve got that set up, you can get as creative as you want (again, the more the better). We provide some accompanying materials that can help guide your roasts in a productive direction. A template with some talking points and a set of cards that can be played as certain truths are discovered about the pitched idea.</p>
+    </div>
+
+    <div class="content-row" style="padding-bottom: 0px;">
+      <h2>Materials</h2>
+      <p>You really don't need anything to play, but to get things rolling and/or to spice it up a little, you can use these supplementary materials. <a href="https://docs.google.com/spreadsheets/d/1eJ_XI1YQy_SOIDg-NNHA8wpMcmxyEgzPuysYB2gHVus/edit?usp=sharing" target="_blank">Here you can find a Google sheet template</a> that can be used to evaluate (and devaluate) pitches, kind of like a term sheet. Below you can find the various cards that can be played throughout a roast, depending on the circumstances. You don't get points for using them (unless you decide that's something you want to do), so feel free to go crazy with them.</p>
+      <div class="cards">
+        <div class="card">
+          <img src="assets/images/cards/uber.png" />
+          <!-- <p class="description">For those ideas that are really out of this world. Moonshots, cities on mars, cures for cancer. You get the idea.</p> -->
+        </div>
+        <div class="card">
+          <img src="assets/images/cards/green.png" />
+          <!-- <p class="description">Lorem ipsum</p> -->
+        </div>
+        <div class="card">
+          <img src="assets/images/cards/xprize.png" />
+          <!-- <p class="description">Lorem ipsum</p> -->
+        </div>
+        <div class="card">
+          <img src="assets/images/cards/icarus.png" />
+          <!-- <p class="description">Lorem ipsum</p> -->
+        </div>
+        <div class="card">
+          <img src="assets/images/cards/pivot.png" />
+          <!-- <p class="description">Lorem ipsum</p> -->
+        </div>
+        <div class="card">
+          <img src="assets/images/cards/seed.png" />
+          <!-- <p class="description">Lorem ipsum</p> -->
+        </div>
+        <div class="card">
+          <img src="assets/images/cards/black.png" />
+          <!-- <p class="description">Lorem ipsum</p> -->
+        </div>
+        <div class="card">
+          <img src="assets/images/cards/unicorn.png" />
+          <!-- <p class="description">Lorem ipsum</p> -->
+        </div>
+      </div>
+    </div>
+
+    <div class="content-row">
+      <h2>Frequently Asked Questions</h2>
+      <ul>
+        <li>
+          <div>
+            <span class="question">! Am I allowed to steal my friends/co-workers/spouses ideas after we play?</span>
+            <span>That is entirely up to you, but we’d at least suggest that you offer them some equity.</span>
+          </div>
+        </li>
+
+        <li>
+          <div>
+            <span class="question">! My friend/co-worker/spouse stole my great product idea! Can you help me?</span>
+            <span>No, unfortunately we cannot, but see if you can convince them you bring you onboard as a co-founder and maybe give you some equity. Remember, imitation is the sincerest form of flattery!</span>
+          </div>
+        </li>
+
+        <li>
+          <div>
+            <span class="question">! Are we allowed to force people to sign NDAs before sessions?</span>
+            <span>We really wouldn’t. Seems like an easy way to lose all your friends, and then you won’t have anyone to play Product Roast™️ with.</span>
+          </div>
+        </li>
+
+        <li>
+          <div>
+            <span class="question">! Is the name Product Roast™️ really trademarked?</span>
+            <span><a href="https://youtu.be/oLdFFD8II8U?t=8" target="_blank">Yeppers.</a> <a href="https://youtu.be/oLdFFD8II8U?t=16" target="_blank">Yesh.</a></span>
+          </div>
+        </li>
+      </ul>
     </div>
 
     <div id="boom-roasted">
@@ -170,47 +300,52 @@
         <div class="boom-roasted-text" id="roasted">Roasted!</div>
       </div>
 
-      <img class="boom-roasted current-frame" id="boom-roasted-1" src="assets/images/boom_roasted/1.jpg" />
-      <img class="boom-roasted" id="boom-roasted-2" src="assets/images/boom_roasted/2.jpg" />
-      <img class="boom-roasted" id="boom-roasted-3" src="assets/images/boom_roasted/3.jpg" />
-      <img class="boom-roasted" id="boom-roasted-4" src="assets/images/boom_roasted/4.jpg" />
-      <img class="boom-roasted" id="boom-roasted-5" src="assets/images/boom_roasted/5.jpg" />
-      <img class="boom-roasted" id="boom-roasted-6" src="assets/images/boom_roasted/6.jpg" />
-      <img class="boom-roasted" id="boom-roasted-7" src="assets/images/boom_roasted/7.jpg" />
-      <img class="boom-roasted" id="boom-roasted-8" src="assets/images/boom_roasted/8.jpg" />
-      <img class="boom-roasted" id="boom-roasted-9" src="assets/images/boom_roasted/9.jpg" />
-      <img class="boom-roasted" id="boom-roasted-10" src="assets/images/boom_roasted/10.jpg" />
-      <img class="boom-roasted" id="boom-roasted-11" src="assets/images/boom_roasted/11.jpg" />
-      <img class="boom-roasted" id="boom-roasted-12" src="assets/images/boom_roasted/12.jpg" />
-      <img class="boom-roasted" id="boom-roasted-13" src="assets/images/boom_roasted/13.jpg" />
-      <img class="boom-roasted" id="boom-roasted-14" src="assets/images/boom_roasted/14.jpg" />
-      <img class="boom-roasted" id="boom-roasted-15" src="assets/images/boom_roasted/15.jpg" />
-      <img class="boom-roasted" id="boom-roasted-16" src="assets/images/boom_roasted/16.jpg" />
-      <img class="boom-roasted" id="boom-roasted-17" src="assets/images/boom_roasted/17.jpg" />
-      <img class="boom-roasted" id="boom-roasted-18" src="assets/images/boom_roasted/18.jpg" />
-      <img class="boom-roasted" id="boom-roasted-19" src="assets/images/boom_roasted/19.jpg" />
-      <img class="boom-roasted" id="boom-roasted-20" src="assets/images/boom_roasted/20.jpg" />
-      <img class="boom-roasted" id="boom-roasted-21" src="assets/images/boom_roasted/21.jpg" />
-      <img class="boom-roasted" id="boom-roasted-22" src="assets/images/boom_roasted/22.jpg" />
-      <img class="boom-roasted" id="boom-roasted-23" src="assets/images/boom_roasted/23.jpg" />
-      <img class="boom-roasted" id="boom-roasted-24" src="assets/images/boom_roasted/24.jpg" />
-      <img class="boom-roasted" id="boom-roasted-25" src="assets/images/boom_roasted/25.jpg" />
-      <img class="boom-roasted" id="boom-roasted-26" src="assets/images/boom_roasted/26.jpg" />
-      <img class="boom-roasted" id="boom-roasted-27" src="assets/images/boom_roasted/27.jpg" />
-      <img class="boom-roasted" id="boom-roasted-28" src="assets/images/boom_roasted/28.jpg" />
-      <img class="boom-roasted" id="boom-roasted-29" src="assets/images/boom_roasted/29.jpg" />
-      <img class="boom-roasted" id="boom-roasted-30" src="assets/images/boom_roasted/30.jpg" />
-      <img class="boom-roasted" id="boom-roasted-31" src="assets/images/boom_roasted/31.jpg" />
-      <img class="boom-roasted" id="boom-roasted-32" src="assets/images/boom_roasted/32.jpg" />
-      <img class="boom-roasted" id="boom-roasted-33" src="assets/images/boom_roasted/33.jpg" />
-      <img class="boom-roasted" id="boom-roasted-34" src="assets/images/boom_roasted/34.jpg" />
-      <img class="boom-roasted" id="boom-roasted-35" src="assets/images/boom_roasted/35.jpg" />
-      <img class="boom-roasted" id="boom-roasted-36" src="assets/images/boom_roasted/36.jpg" />
-      <img class="boom-roasted" id="boom-roasted-37" src="assets/images/boom_roasted/37.jpg" />
-      <img class="boom-roasted" id="boom-roasted-38" src="assets/images/boom_roasted/38.jpg" />
-      <img class="boom-roasted" id="boom-roasted-39" src="assets/images/boom_roasted/39.jpg" />
-      <img class="boom-roasted" id="boom-roasted-40" src="assets/images/boom_roasted/40.jpg" />
-      <img class="boom-roasted" id="boom-roasted-41" src="assets/images/boom_roasted/41.jpg" />
+      <div class="credits-wrapper">
+        <div>Jokes by <a href="https://twitter.com/indifferentalex">@indifferentalex</a></div>
+        <div>Design by <a href="https://twitter.com/Claudia_Melonii">@Claudia_Melonii</a></div>
+      </div>
+
+      <img class="boom-roasted current-frame" id="boom-roasted-1" src="assets/images/boom_roasted/thin-01.jpg" />
+      <img class="boom-roasted" id="boom-roasted-2" src="assets/images/boom_roasted/thin-02.jpg" />
+      <img class="boom-roasted" id="boom-roasted-3" src="assets/images/boom_roasted/thin-03.jpg" />
+      <img class="boom-roasted" id="boom-roasted-4" src="assets/images/boom_roasted/thin-04.jpg" />
+      <img class="boom-roasted" id="boom-roasted-5" src="assets/images/boom_roasted/thin-05.jpg" />
+      <img class="boom-roasted" id="boom-roasted-6" src="assets/images/boom_roasted/thin-06.jpg" />
+      <img class="boom-roasted" id="boom-roasted-7" src="assets/images/boom_roasted/thin-07.jpg" />
+      <img class="boom-roasted" id="boom-roasted-8" src="assets/images/boom_roasted/thin-08.jpg" />
+      <img class="boom-roasted" id="boom-roasted-9" src="assets/images/boom_roasted/thin-09.jpg" />
+      <img class="boom-roasted" id="boom-roasted-10" src="assets/images/boom_roasted/thin-10.jpg" />
+      <img class="boom-roasted" id="boom-roasted-11" src="assets/images/boom_roasted/thin-11.jpg" />
+      <img class="boom-roasted" id="boom-roasted-12" src="assets/images/boom_roasted/thin-12.jpg" />
+      <img class="boom-roasted" id="boom-roasted-13" src="assets/images/boom_roasted/thin-13.jpg" />
+      <img class="boom-roasted" id="boom-roasted-14" src="assets/images/boom_roasted/thin-14.jpg" />
+      <img class="boom-roasted" id="boom-roasted-15" src="assets/images/boom_roasted/thin-15.jpg" />
+      <img class="boom-roasted" id="boom-roasted-16" src="assets/images/boom_roasted/thin-16.jpg" />
+      <img class="boom-roasted" id="boom-roasted-17" src="assets/images/boom_roasted/thin-17.jpg" />
+      <img class="boom-roasted" id="boom-roasted-18" src="assets/images/boom_roasted/thin-18.jpg" />
+      <img class="boom-roasted" id="boom-roasted-19" src="assets/images/boom_roasted/thin-19.jpg" />
+      <img class="boom-roasted" id="boom-roasted-20" src="assets/images/boom_roasted/thin-20.jpg" />
+      <img class="boom-roasted" id="boom-roasted-21" src="assets/images/boom_roasted/thin-21.jpg" />
+      <img class="boom-roasted" id="boom-roasted-22" src="assets/images/boom_roasted/thin-22.jpg" />
+      <img class="boom-roasted" id="boom-roasted-23" src="assets/images/boom_roasted/thin-23.jpg" />
+      <img class="boom-roasted" id="boom-roasted-24" src="assets/images/boom_roasted/thin-24.jpg" />
+      <img class="boom-roasted" id="boom-roasted-25" src="assets/images/boom_roasted/thin-25.jpg" />
+      <img class="boom-roasted" id="boom-roasted-26" src="assets/images/boom_roasted/thin-26.jpg" />
+      <img class="boom-roasted" id="boom-roasted-27" src="assets/images/boom_roasted/thin-27.jpg" />
+      <img class="boom-roasted" id="boom-roasted-28" src="assets/images/boom_roasted/thin-28.jpg" />
+      <img class="boom-roasted" id="boom-roasted-29" src="assets/images/boom_roasted/thin-29.jpg" />
+      <img class="boom-roasted" id="boom-roasted-30" src="assets/images/boom_roasted/thin-30.jpg" />
+      <img class="boom-roasted" id="boom-roasted-31" src="assets/images/boom_roasted/thin-31.jpg" />
+      <img class="boom-roasted" id="boom-roasted-32" src="assets/images/boom_roasted/thin-32.jpg" />
+      <img class="boom-roasted" id="boom-roasted-33" src="assets/images/boom_roasted/thin-33.jpg" />
+      <img class="boom-roasted" id="boom-roasted-34" src="assets/images/boom_roasted/thin-34.jpg" />
+      <img class="boom-roasted" id="boom-roasted-35" src="assets/images/boom_roasted/thin-35.jpg" />
+      <img class="boom-roasted" id="boom-roasted-36" src="assets/images/boom_roasted/thin-36.jpg" />
+      <img class="boom-roasted" id="boom-roasted-37" src="assets/images/boom_roasted/thin-37.jpg" />
+      <img class="boom-roasted" id="boom-roasted-38" src="assets/images/boom_roasted/thin-38.jpg" />
+      <img class="boom-roasted" id="boom-roasted-39" src="assets/images/boom_roasted/thin-39.jpg" />
+      <img class="boom-roasted" id="boom-roasted-40" src="assets/images/boom_roasted/thin-40.jpg" />
+      <img class="boom-roasted" id="boom-roasted-41" src="assets/images/boom_roasted/thin-41.jpg" />
     </div>
   </div>
 
